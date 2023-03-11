@@ -6,25 +6,28 @@ const todoList = document.querySelector('.todoList');
 
 const TODO_REG_EXP = /^\s*$/;
 
-todoInput.oninput = (e) => {
-  if (!TODO_REG_EXP.test(e.target.value)) {
-    e.target.classList.add('valid');
-    e.target.classList.remove('invalid');
+todoInput.oninput = ({ target }) => {
+  if (!TODO_REG_EXP.test(target.value)) {
+    target.classList.add('valid');
+    target.classList.remove('invalid');
   } else {
-    e.target.classList.remove('valid');
-    e.target.classList.add('invalid');
+    target.classList.remove('valid');
+    target.classList.add('invalid');
   }
 };
 
 todoForm.onsubmit = (e) => {
   e.preventDefault();
-  if (!TODO_REG_EXP.test(e.target.elements['todo-item'].value)) {
-    const todoListItem = createTodoItem(e.target.elements['todo-item'].value);
+
+  const todoItem = e.target.elements['todo-item'];
+
+  if (!TODO_REG_EXP.test(todoItem.value)) {
+    const todoListItem = createTodoItem(todoItem.value);
     todoList.append(todoListItem);
-    e.target.elements['todo-item'].value = '';
-    e.target.elements['todo-item'].classList.remove('valid');
+    todoItem.value = '';
+    todoItem.classList.remove('valid');
   } else {
-    e.target.elements['todo-item'].classList.add('invalid');
+    todoItem.classList.add('invalid');
   }
 };
 
