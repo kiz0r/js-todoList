@@ -1,5 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
+}
+
+.todoWrapper {
+  font-family: 'Roboto', sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.todoInput {
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.todoListItem {
+  /* font-size: 20px;
+  font-weight: 700; */
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+.todoList {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .valid {

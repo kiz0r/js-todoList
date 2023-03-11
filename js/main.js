@@ -36,7 +36,8 @@ function createTodoItem(value) {
   todoItem.classList.add('todoListItem');
 
   const delBtn = document.createElement('button');
-  delBtn.textContent = 'X';
+  delBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
+  delBtn.classList.add('btn');
 
   delBtn.onclick = () => {
     todoItem.remove();
