@@ -19,6 +19,11 @@
   font-size: 24px;
 }
 
+.todoForm {
+  display: flex;
+  align-items: center;
+}
+
 .todoInput {
   height: 30px;
   border: 2px solid black;
@@ -31,6 +36,7 @@
   font-weight: 700; */
   width: inherit;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 8px 0;
 }

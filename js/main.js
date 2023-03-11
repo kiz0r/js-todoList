@@ -35,6 +35,9 @@ function createTodoItem(value) {
   const todoItem = document.createElement('li');
   todoItem.classList.add('todoListItem');
 
+  const checkBox = document.createElement('input');
+  checkBox.type = 'checkbox';
+
   const delBtn = document.createElement('button');
   delBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
   delBtn.classList.add('btn');
@@ -46,7 +49,15 @@ function createTodoItem(value) {
   const todoValue = document.createElement('span');
   todoValue.textContent = value;
 
-  todoItem.append(todoValue, delBtn);
+  checkBox.onclick = () => {
+    if (checkBox.checked === true) {
+      todoValue.style.textDecoration = 'line-through';
+    } else {
+      todoValue.style.textDecoration = 'none';
+    }
+  };
+
+  todoItem.append(checkBox, todoValue, delBtn);
 
   return todoItem;
 }
