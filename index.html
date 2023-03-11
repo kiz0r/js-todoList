@@ -8,14 +8,20 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- connecting .js files -->
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
     <title>TODO List</title>
   </head>
   <body>
     <div class="todoWrapper">
       <h2>TODO List</h2>
       <form class="todoForm">
-        <input type="text" name="todo-item" placeholder="Add todo" autofocus />
+        <input
+          type="text"
+          name="todo-item"
+          placeholder="Add todo"
+          autofocus
+          class="todoInput"
+        />
         <button type="submit" class="submitBtn">+</button>
       </form>
       <ul class="todoList"></ul>
